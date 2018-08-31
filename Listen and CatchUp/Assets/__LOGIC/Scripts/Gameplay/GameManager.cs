@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : SingletonBehaviour<GameManager> {
 
     //******* GamePlay ********
-
-    //Singleton
-    public static GameManager Instance;
 
     //Palavras
     private List<Word> _wordList;
@@ -34,15 +31,6 @@ public class GameManager : MonoBehaviour {
     //Relogio
     private SimpleTimer _clock;
     private UnityEngine.Events.UnityEvent ClockTick;
-
-
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else if (Instance != this)
-            Destroy(gameObject);
-    }
 
     // Use this for initialization
     void Start () {
