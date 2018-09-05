@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801b570ec2309044bbe9b04f2095f429, type: 3}
+  m_Name: Cow
+  m_EditorClassIdentifier: 
+  Values:
+  - Language: 1
+    Value: Vaca
+  - Language: 0
+    Value: Cow
+  Image: {fileID: 21300000, guid: d876f4abcfb0d1a48a57f8567db5a415, type: 3}

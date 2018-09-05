@@ -1,9 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Word
+[CreateAssetMenu(fileName = "New Word", menuName = "Word")]
+public class Word:ScriptableObject
 {
-    public string NameEnglish;
-    public string ImagePath;
+    public WordValue[] Values;
+    public Sprite Image;
+}
+
+[Serializable]
+public struct WordValue
+{
+    public Language Language;
+    public string Value;
+}
+
+[Serializable]
+public enum Language
+{
+    English,Portuguese
 }
