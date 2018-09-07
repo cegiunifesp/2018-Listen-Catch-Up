@@ -62,16 +62,34 @@
   <ItemGroup>
     <Compile Include="Assets\__LOGIC\Scripts\CubeGrid\Cube.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\CubeGrid\CubeGenerator.cs" />
+    <Compile Include="Assets\__LOGIC\Scripts\Gameplay\Timer.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\Word.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordCube.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordGrid.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordManager.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Utils\SingletonBehaviour.cs" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Sky.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Minimalist Standard.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Minimalist Standard lwrp.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\ReadMe.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\__LOGIC\Shaders\Transparent Color Gradient.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Asus/Documents/UnityProjects/Listen-Catch-Up/Listen and CatchUp/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

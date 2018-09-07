@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Cube<T> : MonoBehaviour
 {
+    public int Row;
     public T Data
     {
         get { return _data; }
@@ -12,8 +13,6 @@ public class Cube<T> : MonoBehaviour
             OnDataChanged();
         }
     }
-    public Action<Cube<T>> OnCicked;
-
     private T _data;
 
 
@@ -26,14 +25,9 @@ public class Cube<T> : MonoBehaviour
     {
     }
 
-    protected void OnCubeClicked()
+    protected virtual void OnMouseDown()
     {
         Destroy(gameObject);
-    }
-
-    private void OnMouseDown()
-    {
-        OnCicked?.Invoke(this);
-        OnCubeClicked();
+        CubeGenerator<T>.Instance.CreateCube(Row);
     }
 }
