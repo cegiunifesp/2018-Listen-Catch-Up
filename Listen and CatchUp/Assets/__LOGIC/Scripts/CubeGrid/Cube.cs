@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Cube<T> : MonoBehaviour
 {
+<<<<<<< HEAD
     private bool shaking = false;
     private float timer;
+=======
+>>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
     public int Row;
     public T Data
     {
@@ -32,6 +35,7 @@ public class Cube<T> : MonoBehaviour
     {
         Destroy(gameObject);
         CubeGenerator<T>.Instance.CreateCube(Row);
+<<<<<<< HEAD
         GameManager.Instance.RightChoice();
     }
 
@@ -69,6 +73,8 @@ public class Cube<T> : MonoBehaviour
         }
 
         
+=======
+>>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
     }
 
 }
