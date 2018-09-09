@@ -34,7 +34,6 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         Destroy(cubeInstance);
         _startLocation = new Vector3(_cubeSize.x/2f + bounds.min.x, bounds.max.y + (CubeFallHeight * _cubeSize.y), bounds.min.z);
         _gridsize = new Vector2((int)Mathf.Floor((bounds.size.x + Spacing) / _cubeSize.x) - 1, (int)Mathf.Floor(bounds.size.y / _cubeSize.y));
-        GenerateGrid();
     }
 
     public virtual Cube<T> CreateCube(int row)
@@ -44,23 +43,17 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         float randomRotationY = Random.Range(RangeRotationY.x, RangeRotationY.y);
         Vector3 randomRotation = new Vector3(randomRotationx, randomRotationY);
         Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
-        cube.OnCicked += targetCube=>CreateCube(row);
-        OnCubeSpawned?.Invoke(cube);
+        cube.Row = row;
         cube.Setup();
+        OnCubeSpawned?.Invoke(cube);
         return cube;
     }
 
     public virtual Cube<T> CreateCube(T data , int row)
     {
-        Vector3 position = _startLocation + new Vector3((_cubeSize.x + Spacing) * row, 0);
-        float randomRotationx = Random.Range(RangeRotationX.x, RangeRotationX.y);
-        float randomRotationY = Random.Range(RangeRotationY.x, RangeRotationY.y);
-        Vector3 randomRotation = new Vector3(randomRotationx, randomRotationY);
-        Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
-        cube.Data = data;
-        cube.OnCicked += targetCube => CreateCube(row);
-        OnCubeSpawned?.Invoke(cube);
-        return cube;
+        var created = CreateCube(row);
+        created.Data = data;
+        return created;
     }
 
     public virtual void GenerateGrid()
