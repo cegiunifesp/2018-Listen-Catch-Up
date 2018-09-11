@@ -64,10 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\__LOGIC\Scripts\CubeGrid\Cube.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\CubeGrid\CubeGenerator.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\GameManager.cs" />
-=======
->>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\Timer.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\Word.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordCube.cs" />

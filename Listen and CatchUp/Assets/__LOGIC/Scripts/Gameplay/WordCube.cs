@@ -27,13 +27,12 @@ public class WordCube : Cube<Word>
         {
             base.OnMouseDown();
         }
-<<<<<<< HEAD
+
         else
         {
             base.OnWrongMouseDown();
         }
-=======
->>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
+
     }
 
     private void PaintRandomColor()
@@ -59,9 +58,4 @@ public class WordCube : Cube<Word>
             material.SetColor(prop,Color.HSVToRGB(h,s,v));
         }
     }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
 }

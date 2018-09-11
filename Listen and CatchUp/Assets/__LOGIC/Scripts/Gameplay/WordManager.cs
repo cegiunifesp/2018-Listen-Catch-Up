@@ -56,20 +56,16 @@ public class WordManager : SingletonBehaviour<WordManager>
         if (result)
         {
             _onGridWords.Remove(word);
-<<<<<<< HEAD
+
             if(GetNewWord() == null)
             {
                 GameManager.Instance.EndCampaing();
             }
-=======
+
             GetNewWord();
->>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
+
         }
 
         return result;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
 }

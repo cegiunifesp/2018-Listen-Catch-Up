@@ -11,7 +11,6 @@ public class Timer : MonoBehaviour
     public Action<Timer> OnTick;
     public Action<Timer> OnTimerFinished;
     public TextMeshPro Display;
-<<<<<<< HEAD
     public GameObject Bar;
     float _barscale;
 
@@ -23,20 +22,13 @@ public class Timer : MonoBehaviour
 
         Bar.transform.localScale = new Vector3(0, Bar.transform.localScale.y, Bar.transform.localScale.z);
 
-=======
-
-    IEnumerator Start()
-    {
-        RemainingSeconds = InitialSeconds;
-        Display.text = RemainingSeconds + "";
->>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
         while (RemainingSeconds!= 0)
         {
             yield return new WaitForSecondsRealtime(1);
             OnTick?.Invoke(this);
             RemainingSeconds--;
             Display.text = RemainingSeconds + "";
-<<<<<<< HEAD
+
             Bar.transform.localScale =  (new Vector3((_barscale/InitialSeconds) * (InitialSeconds - RemainingSeconds), Bar.transform.localScale.y, Bar.transform.localScale.z));
         }
 
@@ -63,13 +55,7 @@ public class Timer : MonoBehaviour
     {
         Bar.transform.localScale = new Vector3(_barscale, Bar.transform.localScale.y, Bar.transform.localScale.z);
         StopCoroutine("StartTimer");
-=======
-        }
-
-    
-        OnTimerFinished?.Invoke(this);
-
->>>>>>> cf1568948540affab573bfd6fb673671e1d037b0
+       
     }
 
 }
