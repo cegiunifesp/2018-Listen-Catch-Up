@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -15,6 +16,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
     private Vector2 _gridsize;
     private Vector2 _cubeSize;
     private Vector3 _startLocation;
+    private List<Cube<T>> _cubes= new List<Cube<T>>();
 
     protected virtual void OnValidate()
     {
@@ -45,6 +47,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
         cube.Row = row;
         cube.Setup();
+        _cubes.Add(cube);
         OnCubeSpawned?.Invoke(cube);
         return cube;
     }
@@ -64,6 +67,16 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
             {
                CreateCube(i);
             }
+        }
+    }
+
+    public virtual void Clear()
+    {
+        int cubeCount = _cubes.Count;
+        for (var i = 0; i < cubeCount; i++)
+        {
+             _cubes[0].Destroy();
+            _cubes.RemoveAt(0);
         }
     }
 }

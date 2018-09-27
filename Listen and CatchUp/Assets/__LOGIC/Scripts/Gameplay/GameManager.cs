@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : SingletonBehaviour<GameManager> {
 
     public Timer GameTimer;
+    public MenuCube Play;
+
     public GameObject MainMenu;
     public GameObject InGameInterface;
     public GameObject EndGameInterface;
@@ -20,8 +22,10 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+	{
+	    Play.OnClicked += cube => StartCampaing();
+        WordManager.Instance.OnOutOfWords += EndCampaing;
         ShowMainScreen();
 
     }
@@ -34,6 +38,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
     public void StartCampaing()
     {
+        AnimationManager.Instance.InGame();
         MainMenu.SetActive(false);
         InGameInterface.SetActive(true);
         EndGameInterface.SetActive(false);
@@ -45,12 +50,14 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
     public void EndCampaing()
     {
+        AnimationManager.Instance.MainMenu();
         MainMenu.SetActive(false);
         InGameInterface.SetActive(false);
         EndGameInterface.SetActive(true);
         GameTimer.StopTimer();
         GameTimer.gameObject.SetActive(false);
         ScoreText.text = _score.GetScore().ToString();
+        WordGrid.Instance.Clear();
     }
 
     public void ShowMainScreen()

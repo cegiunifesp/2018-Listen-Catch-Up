@@ -4,4 +4,10 @@
         base.GenerateGrid();
         WordManager.Instance.GetNewWord();
     }
+
+    public override void Clear()
+    {
+        base.Clear();
+        WordManager.Instance.ResetWords();
+    }
 }

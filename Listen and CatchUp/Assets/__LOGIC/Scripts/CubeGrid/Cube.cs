@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Cube<T> : MonoBehaviour
 {
-    private bool shaking = false;
-    private float timer;
     public int Row;
     public T Data
     {
@@ -30,45 +26,13 @@ public class Cube<T> : MonoBehaviour
 
     protected virtual void OnMouseDown()
     {
-        Destroy(gameObject);
+        Destroy();
         CubeGenerator<T>.Instance.CreateCube(Row);
-        GameManager.Instance.RightChoice();
     }
 
-    protected virtual void OnWrongMouseDown()
+    public virtual void Destroy()
     {
-        StartCoroutine("ShakeNow");
-        GameManager.Instance.WrongChoice();
-    }
-
-    IEnumerator ShakeNow()
-    {
-        Vector3 original = transform.eulerAngles;
-
-        if (shaking == false)
-        {
-            shaking = true;
-            timer = 0;
-        }
-
-        yield return new WaitForSecondsRealtime(0.5f);
-
-        shaking = false;
-
-        transform.eulerAngles = original;
-    }
-
-    private void Update()
-    {
-        
-
-        if (shaking)
-        {
-            timer += Time.deltaTime;
-            transform.Rotate(new Vector3(0,0, Mathf.Cos(timer *  20)));
-        }
-
-        
+        Destroy(gameObject);
     }
 
 }

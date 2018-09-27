@@ -8,6 +8,7 @@ public class WordManager : SingletonBehaviour<WordManager>
 
     public Word[] WordList;
     public Word CurrentWord;
+    public Action OnOutOfWords;
 
     private List<Word> UnusedWords
     {
@@ -59,7 +60,7 @@ public class WordManager : SingletonBehaviour<WordManager>
 
             if(GetNewWord() == null)
             {
-                GameManager.Instance.EndCampaing();
+                OnOutOfWords?.Invoke();
             }
 
             GetNewWord();
@@ -67,5 +68,12 @@ public class WordManager : SingletonBehaviour<WordManager>
         }
 
         return result;
+    }
+
+    public void ResetWords()
+    {
+        _usedWords.Clear();
+        _onGridWords.Clear();
+        _unusedWordsInitialized = false;
     }
 }

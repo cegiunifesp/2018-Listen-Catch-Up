@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.UI;
-using Random = System.Random;
+﻿using UnityEngine;
 
 public class WordCube : Cube<Word>
 {
@@ -11,7 +8,7 @@ public class WordCube : Cube<Word>
     public override void Setup()
     {
         Data = WordManager.Instance.GetRandomWord();
-        if(Data == null)
+        if (Data == null)
             Destroy(gameObject);
         PaintRandomColor();
     }
@@ -26,11 +23,12 @@ public class WordCube : Cube<Word>
         if (WordManager.Instance.ValidateWord(Data))
         {
             base.OnMouseDown();
+            GameManager.Instance.RightChoice();
         }
 
         else
         {
-            base.OnWrongMouseDown();
+            GameManager.Instance.WrongChoice();
         }
 
     }
@@ -47,15 +45,15 @@ public class WordCube : Cube<Word>
             "_Color1_T",
             "_Color1_R"
         };
-        float hue =UnityEngine.Random.Range(0f, 1f) ;
-       
+        float hue = UnityEngine.Random.Range(0f, 1f);
+
         foreach (var prop in propsList)
         {
             Color rgbColor = material.GetColor(prop);
             float h, s, v;
-            Color.RGBToHSV(rgbColor,out h,out s, out v);
+            Color.RGBToHSV(rgbColor, out h, out s, out v);
             h = hue;
-            material.SetColor(prop,Color.HSVToRGB(h,s,v));
+            material.SetColor(prop, Color.HSVToRGB(h, s, v));
         }
     }
 }
