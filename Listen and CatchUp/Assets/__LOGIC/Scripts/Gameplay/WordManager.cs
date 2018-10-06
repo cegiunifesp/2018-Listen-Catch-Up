@@ -86,9 +86,14 @@ public class WordManager : SingletonBehaviour<WordManager>
     [ContextMenu("Cache All Words TTS")]
     public void CacheAllWordsTTS()
     {
+        Debug.Log("Caching words...");
+        int i = 0;
         foreach (var word in WordList)
         {
-            GetTTS(word, clip => Debug.Log("Cached " + word.In(Language.English)));
+            GetTTS(word, clip =>
+            {
+                if (++i == WordList.Length) Debug.Log("Cached all words");
+            });
         }
     }
     [ContextMenu("Clear Words TTS Cache")]

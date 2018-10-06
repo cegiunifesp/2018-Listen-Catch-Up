@@ -2,6 +2,9 @@
 
 public class AudioManager : SingletonBehaviour<AudioManager>
 {
+    public float FXVolume = 1;
+    public float BGMVolume = .3f;
+
     private AudioSource FxSource
     {
         get
@@ -10,6 +13,7 @@ public class AudioManager : SingletonBehaviour<AudioManager>
             {
                 _fxSource = gameObject.AddComponent<AudioSource>();
                 _fxSource.spatialize = false;
+                _fxSource.volume = FXVolume;
                 _createdFxSource = _fxSource != null;
             }
 
@@ -28,6 +32,8 @@ public class AudioManager : SingletonBehaviour<AudioManager>
             {
                 _bgmSource = gameObject.AddComponent<AudioSource>();
                 _bgmSource.spatialize = false;
+                _bgmSource.volume = BGMVolume;
+                _bgmSource.loop = true;
                 _createdBgmSource = _bgmSource != null;
             }
 
@@ -48,7 +54,6 @@ public class AudioManager : SingletonBehaviour<AudioManager>
     public void SetBackgroundMusic(AudioClip clip)
     {
         BgmSource.clip = clip;
-        BgmSource.loop = true;
         BgmSource.Play();
     }
 }
@@ -62,5 +67,16 @@ public static class AudioClipExtensions
     public static void PlayBackgroundMusic(this AudioClip clip)
     {
         AudioManager.Instance.SetBackgroundMusic(clip);
+    }
+
+    public static void PlayRandomBackgroundMusic(this AudioClip[] clips)
+    {
+        var clip = clips[Random.Range(0, clips.Length)];
+       clip.PlayBackgroundMusic();
+    }
+    public static void PlayRandomFx(this AudioClip[] clips)
+    {
+        var clip = clips[Random.Range(0, clips.Length)];
+        clip.PlayFx();
     }
 }

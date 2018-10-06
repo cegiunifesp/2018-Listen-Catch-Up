@@ -5071,6 +5071,7 @@ Transform:
   - {fileID: 2146742663}
   - {fileID: 979440749}
   - {fileID: 1764215630}
+  - {fileID: 1759380211}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5370,6 +5371,11 @@ MonoBehaviour:
   ScoreImage: {fileID: 0}
   RightAudio: {fileID: 8300000, guid: 3b00f5bf09fed66428da07c429cc2c1e, type: 3}
   WrongAudio: {fileID: 8300000, guid: 476f6a4aacff8154b8f51da208c4d265, type: 3}
+  MenuAudio:
+  - {fileID: 8300000, guid: c128733a2bb61fd4582b347226ab4711, type: 3}
+  IngameAudio:
+  - {fileID: 8300000, guid: 305ac17dab5c8994bbc758509fd95123, type: 3}
+  - {fileID: 8300000, guid: 69bd8429edbac6f4da62d584b89da7dd, type: 3}
 --- !u!1 &1088428323
 GameObject:
   m_ObjectHideFlags: 0
@@ -10721,6 +10727,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4914458720640640, guid: 4abdb96a1125ba74a8ce8b04a6b7d0c1,
     type: 2}
   m_PrefabInternal: {fileID: 782232458}
+--- !u!1 &1759380210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1759380211}
+  - component: {fileID: 1759380212}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1759380211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1759380210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 767023536}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1759380212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1759380210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caae943ca0f77e4fa88c32e18815ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FXVolume: 1
+  BGMVolume: 0.3
 --- !u!1 &1764215629
 GameObject:
   m_ObjectHideFlags: 0
@@ -11060,7 +11108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af9fe2fd91e0964e926648d38bebc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeechSpeed: -2
+  SpeechSpeed: -5
   WordList:
   - {fileID: 11400000, guid: 639f0b5bb27366549b6b0b0086dc1c7b, type: 2}
   - {fileID: 11400000, guid: 4783aa7be36279c46859a42f1dd0d487, type: 2}

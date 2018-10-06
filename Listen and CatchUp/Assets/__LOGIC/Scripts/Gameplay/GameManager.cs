@@ -14,9 +14,14 @@ public class GameManager : SingletonBehaviour<GameManager> {
     public UnityEngine.UI.Text ScoreText;
     public UnityEngine.UI.Image ScoreImage;
 
-
+    [Header("Audio")]
+    [Header("FX")]
     public AudioClip RightAudio;
     public AudioClip WrongAudio;
+    [Header("BGM")]
+    public AudioClip[] MenuAudio;
+    public AudioClip[] IngameAudio;
+
 
     private Score _score;
 
@@ -45,6 +50,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
         Gerador.GenerateGrid();
         GameTimer.gameObject.SetActive(true);
         GameTimer.InitTimer();
+        IngameAudio.PlayRandomBackgroundMusic();
         _score = new Score();
     }
 
@@ -66,9 +72,9 @@ public class GameManager : SingletonBehaviour<GameManager> {
         InGameInterface.SetActive(false);
         EndGameInterface.SetActive(false);
         GameTimer.gameObject.SetActive(false);
+        MenuAudio.PlayRandomBackgroundMusic();
     }
-
-
+    
     public void RightChoice()
     {
         _score.RightChoice();
@@ -83,6 +89,5 @@ public class GameManager : SingletonBehaviour<GameManager> {
         _score.WrongChoice();
         WrongAudio.PlayFx();
     }
-
 
 }
