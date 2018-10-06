@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Hat
   m_EditorClassIdentifier: 
   Values:
-  - Language: 0
+  - Language: 1
     Value: "Chap\xE9u"
   - Language: 0
     Value: Hat

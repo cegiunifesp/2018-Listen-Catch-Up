@@ -8,7 +8,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
 {
     public float CubeFallHeight = 2;
     public float Spacing = 0.1f;
-    public Vector2 RangeRotationX = new Vector2(-2,2);
+    public Vector2 RangeRotationX = new Vector2(-2, 2);
     public Vector2 RangeRotationY = new Vector2(-3, 3);
     public GameObject CubePrefab;
     public Action<Cube<T>> OnCubeSpawned;
@@ -16,7 +16,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
     private Vector2 _gridsize;
     private Vector2 _cubeSize;
     private Vector3 _startLocation;
-    private List<Cube<T>> _cubes= new List<Cube<T>>();
+    private List<Cube<T>> _cubes = new List<Cube<T>>();
 
     protected virtual void OnValidate()
     {
@@ -26,7 +26,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
             CubePrefab = null;
         }
     }
-    protected virtual  void Awake()
+    protected virtual void Awake()
     {
         BoxCollider2D collider2D = GetComponent<BoxCollider2D>();
         Bounds bounds = collider2D.bounds;
@@ -34,7 +34,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         GameObject cubeInstance = Instantiate(CubePrefab.gameObject);
         _cubeSize = cubeInstance.GetComponent<BoxCollider2D>().bounds.size;
         Destroy(cubeInstance);
-        _startLocation = new Vector3(_cubeSize.x/2f + bounds.min.x, bounds.max.y + (CubeFallHeight * _cubeSize.y), bounds.min.z);
+        _startLocation = new Vector3(_cubeSize.x / 2f + bounds.min.x, bounds.max.y + (CubeFallHeight * _cubeSize.y), bounds.min.z);
         _gridsize = new Vector2((int)Mathf.Floor((bounds.size.x + Spacing) / _cubeSize.x) - 1, (int)Mathf.Floor(bounds.size.y / _cubeSize.y));
     }
 
@@ -52,7 +52,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         return cube;
     }
 
-    public virtual Cube<T> CreateCube(T data , int row)
+    public virtual Cube<T> CreateCube(T data, int row)
     {
         var created = CreateCube(row);
         created.Data = data;
@@ -65,7 +65,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         {
             for (int j = 0; j < _gridsize.y; j++)
             {
-               CreateCube(i);
+                CreateCube(i);
             }
         }
     }
@@ -75,7 +75,7 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         int cubeCount = _cubes.Count;
         for (var i = 0; i < cubeCount; i++)
         {
-             _cubes[0].Destroy();
+            _cubes[0].Destroy();
             _cubes.RemoveAt(0);
         }
     }

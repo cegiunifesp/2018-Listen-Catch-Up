@@ -5,7 +5,8 @@ using Random = UnityEngine.Random;
 
 public class WordManager : SingletonBehaviour<WordManager>
 {
-
+    [Range(-10, 10)]
+    public int SpeechSpeed = 0;
     public Word[] WordList;
     public Word CurrentWord;
     public Action OnOutOfWords;
@@ -25,7 +26,7 @@ public class WordManager : SingletonBehaviour<WordManager>
 
     private bool _unusedWordsInitialized = false;
     private List<Word> _unusedWords = null;
-    private List<Word> _onGridWords = new  List<Word>();
+    private List<Word> _onGridWords = new List<Word>();
     private List<Word> _usedWords = new List<Word>();
 
     public Word GetRandomWord()
@@ -48,6 +49,8 @@ public class WordManager : SingletonBehaviour<WordManager>
         }
         int random = Random.Range(0, _onGridWords.Count);
         CurrentWord = _onGridWords[random];
+        Debug.Log("Called");
+        GetTTS(CurrentWord, clip => clip.PlayFx());
         return CurrentWord;
     }
 
@@ -58,12 +61,10 @@ public class WordManager : SingletonBehaviour<WordManager>
         {
             _onGridWords.Remove(word);
 
-            if(GetNewWord() == null)
+            if (GetNewWord() == null)
             {
                 OnOutOfWords?.Invoke();
             }
-
-            GetNewWord();
 
         }
 
@@ -75,5 +76,24 @@ public class WordManager : SingletonBehaviour<WordManager>
         _usedWords.Clear();
         _onGridWords.Clear();
         _unusedWordsInitialized = false;
+    }
+
+    public void GetTTS(Word word, Action<AudioClip> onFinished)
+    {
+        TTS.Get(word.In(Language.English), onFinished, SpeechSpeed);
+    }
+
+    [ContextMenu("Cache All Words TTS")]
+    public void CacheAllWordsTTS()
+    {
+        foreach (var word in WordList)
+        {
+            GetTTS(word, clip => Debug.Log("Cached " + word.In(Language.English)));
+        }
+    }
+    [ContextMenu("Clear Words TTS Cache")]
+    public void ClearAllWordsTTS()
+    {
+        TTS.ClearCache();
     }
 }

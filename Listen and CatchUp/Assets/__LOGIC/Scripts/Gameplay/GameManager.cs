@@ -15,8 +15,8 @@ public class GameManager : SingletonBehaviour<GameManager> {
     public UnityEngine.UI.Image ScoreImage;
 
 
-    public AudioSource RightAudio;
-    public AudioSource WrongAudio;
+    public AudioClip RightAudio;
+    public AudioClip WrongAudio;
 
     private Score _score;
 
@@ -56,7 +56,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
         EndGameInterface.SetActive(true);
         GameTimer.StopTimer();
         GameTimer.gameObject.SetActive(false);
-        ScoreText.text = _score.GetScore().ToString();
+//        ScoreText.text = _score.GetScore().ToString();
         WordGrid.Instance.Clear();
     }
 
@@ -73,18 +73,15 @@ public class GameManager : SingletonBehaviour<GameManager> {
     {
         _score.RightChoice();
         _score.TimePoints(GameTimer.RemainingSeconds);
-        GameTimer.RestartTimer();
-        WrongAudio.Stop();
-        RightAudio.Stop();
-        RightAudio.Play();
+//        GameTimer.RestartTimer();
+        RightAudio.PlayFx();
 
     }
 
     public void WrongChoice()
     {
         _score.WrongChoice();
-        WrongAudio.Stop();
-        WrongAudio.Play();
+        WrongAudio.PlayFx();
     }
 
 
