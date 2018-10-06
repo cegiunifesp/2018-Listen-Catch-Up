@@ -70,18 +70,44 @@
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordGrid.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordManager.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Interface\AnimationManager.cs" />
+    <Compile Include="Assets\__LOGIC\Scripts\Interface\GameOverWindow.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Interface\MenuCube.cs" />
+    <Compile Include="Assets\__LOGIC\Scripts\Networking\GameSparksConnection.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Utils\CoroutineExecutor.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Utils\Score.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Utils\SingletonBehaviour.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Utils\TTS.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\GameSparksRTUnity.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\GameSparksSettings.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\GameSparksUnity.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\MyGameSparks.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\DefaultPlatform.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\IControlledTimer.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\IControlledWebSocket.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\Native\detail\GameSparksNative.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\Native\detail\GameSparksNativePINVOKE.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\Native\detail\NativeWebSocket.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\Native\NativePlatform.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\Native\NativeWebSocket.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\PlatformBase.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\TimerController.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\UnityTimer.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\WebGL\SimpleJson2.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\WebGL\WebGLPlatform.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\WebGL\WebGLWebSocket.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\Platforms\WebSocketController.cs" />
+    <Compile Include="Assets\_EXTENSIONS\GameSparks\TestUI\GameSparksTestUI.cs" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Sky.shader" />
+    <None Include="Assets\_EXTENSIONS\GameSparks\Plugins\GameSparksRT.xml" />
+    <None Include="Assets\__LOGIC\Shaders\FrostedGlass.shader" />
+    <None Include="Assets\_EXTENSIONS\GameSparks\Plugins\Metro\GameSparksRT.xml" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Minimalist Standard.shader" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Minimalist Standard lwrp.shader" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\_EXTENSIONS\GameSparks\README.txt" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -91,6 +117,7 @@
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\_EXTENSIONS\GameSparks\link.xml" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
@@ -318,6 +345,18 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/joe/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks.Api">
+      <HintPath>C:/Users/joe/Documents/UnityProjects/Listen-Catch-Up/Listen and CatchUp/Assets/_EXTENSIONS/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks">
+      <HintPath>C:/Users/joe/Documents/UnityProjects/Listen-Catch-Up/Listen and CatchUp/Assets/_EXTENSIONS/GameSparks/Plugins/GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle_GameSparks">
+      <HintPath>C:/Users/joe/Documents/UnityProjects/Listen-Catch-Up/Listen and CatchUp/Assets/_EXTENSIONS/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparksRT">
+      <HintPath>C:/Users/joe/Documents/UnityProjects/Listen-Catch-Up/Listen and CatchUp/Assets/_EXTENSIONS/GameSparks/Plugins/GameSparksRT.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.9f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

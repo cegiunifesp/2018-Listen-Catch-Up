@@ -9,10 +9,9 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
     public GameObject MainMenu;
     public GameObject InGameInterface;
-    public GameObject EndGameInterface;
+    public GameOverWindow GameOverWindow;
     public WordGrid Gerador;
-    public UnityEngine.UI.Text ScoreText;
-    public UnityEngine.UI.Image ScoreImage;
+   
 
     [Header("Audio")]
     [Header("FX")]
@@ -30,6 +29,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
 	void Start ()
 	{
 	    Play.OnClicked += cube => StartCampaing();
+	    GameTimer.OnTimerFinished += (timer)=>EndCampaing();
         WordManager.Instance.OnOutOfWords += EndCampaing;
         ShowMainScreen();
 
@@ -46,7 +46,6 @@ public class GameManager : SingletonBehaviour<GameManager> {
         AnimationManager.Instance.InGame();
         MainMenu.SetActive(false);
         InGameInterface.SetActive(true);
-        EndGameInterface.SetActive(false);
         Gerador.GenerateGrid();
         GameTimer.gameObject.SetActive(true);
         GameTimer.InitTimer();
@@ -59,18 +58,18 @@ public class GameManager : SingletonBehaviour<GameManager> {
         AnimationManager.Instance.MainMenu();
         MainMenu.SetActive(false);
         InGameInterface.SetActive(false);
-        EndGameInterface.SetActive(true);
         GameTimer.StopTimer();
         GameTimer.gameObject.SetActive(false);
-//        ScoreText.text = _score.GetScore().ToString();
+        GameOverWindow.SetScore(_score);
+        GameOverWindow.Show();
         WordGrid.Instance.Clear();
     }
 
     public void ShowMainScreen()
     {
         MainMenu.SetActive(true);
+        GameOverWindow.Hide();
         InGameInterface.SetActive(false);
-        EndGameInterface.SetActive(false);
         GameTimer.gameObject.SetActive(false);
         MenuAudio.PlayRandomBackgroundMusic();
     }

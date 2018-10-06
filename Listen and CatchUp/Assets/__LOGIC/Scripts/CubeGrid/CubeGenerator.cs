@@ -47,9 +47,16 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
         cube.Row = row;
         cube.Setup();
+        cube.OnClicked += OnCubeClicked;
         _cubes.Add(cube);
         OnCubeSpawned?.Invoke(cube);
         return cube;
+    }
+
+    private void OnCubeClicked(Cube<T> cube)
+    {
+        CreateCube(cube.Row);
+        _cubes.Remove(cube);
     }
 
     public virtual Cube<T> CreateCube(T data, int row)

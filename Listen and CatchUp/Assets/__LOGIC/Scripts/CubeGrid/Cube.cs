@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Cube<T> : MonoBehaviour
 {
@@ -12,8 +13,10 @@ public class Cube<T> : MonoBehaviour
             OnDataChanged();
         }
     }
-    private T _data;
 
+    public Action<Cube<T>> OnClicked;
+
+    private T _data;
 
     public virtual void Setup()
     {
@@ -27,7 +30,7 @@ public class Cube<T> : MonoBehaviour
     protected virtual void OnMouseDown()
     {
         Destroy();
-        CubeGenerator<T>.Instance.CreateCube(Row);
+        OnClicked?.Invoke(this);
     }
 
     public virtual void Destroy()
