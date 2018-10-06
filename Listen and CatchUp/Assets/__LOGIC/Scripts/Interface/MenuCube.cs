@@ -7,20 +7,36 @@ public class MenuCube : MonoBehaviour
     public Action<MenuCube> OnClicked;
     public Animator TextAnimator;
 
+    private bool _hover;
+    private int _animationStateHash;
+
+    private void Awake()
+    {
+        _animationStateHash = Animator.StringToHash("Hidden");
+    }
 
     protected virtual void OnMouseEnter()
     {
-        TextAnimator.SetBool("Visible", true);
+        if(_hover) return;
+        TextAnimator.SetFloat("Visible", 1);
+        float currentTime = TextAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        var time = currentTime > -1 ? currentTime : 0;
+        TextAnimator.Play(_animationStateHash, 0, time);
+        _hover = true;
     }
 
     protected virtual void OnMouseExit()
     {
-        TextAnimator.SetBool("Visible", false);
+        if (!_hover) return;
+        TextAnimator.SetFloat("Visible", -1);
+        float currentTime = TextAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        TextAnimator.Play(_animationStateHash, 0, currentTime);
+        _hover = false;
     }
 
     protected virtual void OnMouseDown()
     {
-        OnClicked?.Invoke(this);
         Destroy(gameObject);
+        OnClicked?.Invoke(this);
     }
 }

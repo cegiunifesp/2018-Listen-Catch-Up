@@ -5158,6 +5158,11 @@ Prefab:
       propertyPath: m_textAlignment
       value: 1026
       objectReference: {fileID: 0}
+    - target: {fileID: 95964461755016664, guid: 4abdb96a1125ba74a8ce8b04a6b7d0c1,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 735e86110fcaf394fa55a6dfc6a2d3e5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4abdb96a1125ba74a8ce8b04a6b7d0c1, type: 2}
   m_IsPrefabAsset: 0
