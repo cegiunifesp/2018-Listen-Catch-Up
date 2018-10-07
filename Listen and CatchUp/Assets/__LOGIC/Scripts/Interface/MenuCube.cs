@@ -15,6 +15,12 @@ public class MenuCube : MonoBehaviour
         _animationStateHash = Animator.StringToHash("Hidden");
     }
 
+
+    private void OnEnable()
+    {
+        OnMouseExit();
+    }
+
     protected virtual void OnMouseEnter()
     {
         if(_hover) return;
@@ -36,7 +42,7 @@ public class MenuCube : MonoBehaviour
 
     protected virtual void OnMouseDown()
     {
-        Destroy(gameObject);
+//        Destroy(gameObject);
         OnClicked?.Invoke(this);
     }
 }

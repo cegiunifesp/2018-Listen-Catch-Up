@@ -5,6 +5,7 @@ public class GameOverWindow : MonoBehaviour
 {
     public TMP_Text Score;
     public Animator WindowAnimator;
+    public SpriteButton MainMenuButton;
 
     private bool _visible = false;
     private int _animationStateHash;
@@ -12,6 +13,12 @@ public class GameOverWindow : MonoBehaviour
     private void Awake()
     {
         _animationStateHash = Animator.StringToHash("ShowWindow");
+        MainMenuButton.OnClicked+= OnClicked;
+    }
+
+    private void OnClicked(SpriteButton arg0)
+    {
+        GameManager.Instance.ShowMainScreen();
     }
 
     public void SetScore(Score score)
@@ -36,8 +43,8 @@ public class GameOverWindow : MonoBehaviour
         if (_visible)
         {
             WindowAnimator.SetFloat("Visible", -1);
-            float currentTime = WindowAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-            WindowAnimator.Play(_animationStateHash, 0, currentTime);
+//            float currentTime = WindowAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+            WindowAnimator.Play(_animationStateHash, 0, 1);
             _visible = false;
         }
     }

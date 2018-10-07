@@ -49,8 +49,7 @@ public class WordManager : SingletonBehaviour<WordManager>
         }
         int random = Random.Range(0, _onGridWords.Count);
         CurrentWord = _onGridWords[random];
-        Debug.Log("Called");
-        GetTTS(CurrentWord, clip => clip.PlayFx());
+        ListenCurrentWord();
         return CurrentWord;
     }
 
@@ -76,6 +75,11 @@ public class WordManager : SingletonBehaviour<WordManager>
         _usedWords.Clear();
         _onGridWords.Clear();
         _unusedWordsInitialized = false;
+    }
+
+    public void ListenCurrentWord()
+    {
+        GetTTS(CurrentWord, clip => clip.PlayFx());
     }
 
     public void GetTTS(Word word, Action<AudioClip> onFinished)

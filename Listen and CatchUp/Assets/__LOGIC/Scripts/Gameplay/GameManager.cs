@@ -3,33 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : SingletonBehaviour<GameManager> {
-
-    public Timer GameTimer;
     public MenuCube Play;
 
     public GameObject MainMenu;
-    public GameObject InGameInterface;
+    public IngameInterface InGameInterface;
     public GameOverWindow GameOverWindow;
     public WordGrid Gerador;
-   
 
     [Header("Audio")]
     [Header("FX")]
     public AudioClip RightAudio;
+
     public AudioClip WrongAudio;
+
     [Header("BGM")]
     public AudioClip[] MenuAudio;
+
     public AudioClip[] IngameAudio;
 
 
     private Score _score;
 
 
-	// Use this for initialization
+    // Use this for initialization
 	void Start ()
 	{
-	    Play.OnClicked += cube => StartCampaing();
-	    GameTimer.OnTimerFinished += (timer)=>EndCampaing();
+        Play.OnClicked += cube => StartCampaing();
         WordManager.Instance.OnOutOfWords += EndCampaing;
         ShowMainScreen();
 
@@ -43,42 +42,40 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
     public void StartCampaing()
     {
-        AnimationManager.Instance.InGame();
-        MainMenu.SetActive(false);
+        AnimationManager.Instance.InGame(()=>
+        {
+            IngameAudio.PlayRandomBackgroundMusic();
+            InGameInterface.Timer.InitTimer();
+            WordManager.Instance.GetNewWord();
+        });
         InGameInterface.SetActive(true);
+        MainMenu.SetActive(false);
         Gerador.GenerateGrid();
-        GameTimer.gameObject.SetActive(true);
-        GameTimer.InitTimer();
-        IngameAudio.PlayRandomBackgroundMusic();
         _score = new Score();
     }
 
     public void EndCampaing()
     {
         AnimationManager.Instance.MainMenu();
-        MainMenu.SetActive(false);
         InGameInterface.SetActive(false);
-        GameTimer.StopTimer();
-        GameTimer.gameObject.SetActive(false);
+        WordGrid.Instance.Clear();
+        MainMenu.SetActive(true);
         GameOverWindow.SetScore(_score);
         GameOverWindow.Show();
-        WordGrid.Instance.Clear();
     }
 
     public void ShowMainScreen()
     {
-        MainMenu.SetActive(true);
         GameOverWindow.Hide();
         InGameInterface.SetActive(false);
-        GameTimer.gameObject.SetActive(false);
+        MainMenu.SetActive(true);
         MenuAudio.PlayRandomBackgroundMusic();
     }
     
     public void RightChoice()
     {
         _score.RightChoice();
-        _score.TimePoints(GameTimer.RemainingSeconds);
-//        GameTimer.RestartTimer();
+        _score.TimePoints(InGameInterface.Timer.RemainingSeconds);
         RightAudio.PlayFx();
 
     }

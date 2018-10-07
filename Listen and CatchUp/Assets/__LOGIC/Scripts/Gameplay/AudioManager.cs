@@ -47,7 +47,6 @@ public class AudioManager : SingletonBehaviour<AudioManager>
     public void PlayEffect(AudioClip clip)
     {
 //        FxSource.pitch = Random.Range(1, 1.05f);
-        Debug.Log("Play called");
         FxSource.PlayOneShot(clip);
     }
 
