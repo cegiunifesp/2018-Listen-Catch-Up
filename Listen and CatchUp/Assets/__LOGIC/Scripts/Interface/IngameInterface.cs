@@ -10,7 +10,7 @@ public class IngameInterface : MonoBehaviour
 
     private void Awake()
     {
-        Timer.OnTimerFinished += (timer) => GameManager.Instance.EndCampaing();
+        Timer.OnTimerFinished += (timer) => GameManager.Instance.EndCampaign();
         LeaveButton.OnClicked += (LeaveButtonClicked);
         ListenButton.OnClicked += (ListenButtonClicked);
     }
@@ -22,7 +22,7 @@ public class IngameInterface : MonoBehaviour
 
     private void LeaveButtonClicked(SpriteButton arg0)
     {
-        GameManager.Instance.EndCampaing();
+        GameManager.Instance.EndCampaign();
     }
 
     public void SetActive(bool active)

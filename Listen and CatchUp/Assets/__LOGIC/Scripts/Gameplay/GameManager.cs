@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class GameManager : SingletonBehaviour<GameManager> {
+public class GameManager : SingletonBehaviour<GameManager>
+{
     public MenuCube Play;
 
     public GameObject MainMenu;
     public IngameInterface InGameInterface;
     public GameOverWindow GameOverWindow;
-    public WordGrid Gerador;
 
     [Header("Audio")]
     [Header("FX")]
@@ -19,59 +17,51 @@ public class GameManager : SingletonBehaviour<GameManager> {
     [Header("BGM")]
     public AudioClip[] MenuAudio;
 
-    public AudioClip[] IngameAudio;
+    public AudioClip[] InGameAudio;
 
 
     private Score _score;
 
-
-    // Use this for initialization
-	void Start ()
-	{
-        Play.OnClicked += cube => StartCampaing();
-        WordManager.Instance.OnOutOfWords += EndCampaing;
+    private void Start()
+    {
+        Play.OnClicked += cube => StartCampaign();
+        WordManager.Instance.OnOutOfWords += EndCampaign;
         ShowMainScreen();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-
-    public void StartCampaing()
+    public void StartCampaign()
     {
-        AnimationManager.Instance.InGame(()=>
+        AnimationManager.Instance.InGame(() =>
         {
-            IngameAudio.PlayRandomBackgroundMusic();
+            InGameAudio.PlayRandomBackgroundMusic();
+            InGameInterface.SetActive(true);
             InGameInterface.Timer.InitTimer();
             WordManager.Instance.GetNewWord();
         });
-        InGameInterface.SetActive(true);
         MainMenu.SetActive(false);
-        Gerador.GenerateGrid();
+        WordGrid.Instance.GenerateGrid();
         _score = new Score();
     }
 
-    public void EndCampaing()
+    public void EndCampaign()
     {
-        AnimationManager.Instance.MainMenu();
         InGameInterface.SetActive(false);
-        WordGrid.Instance.Clear();
-        MainMenu.SetActive(true);
         GameOverWindow.SetScore(_score);
         GameOverWindow.Show();
     }
 
     public void ShowMainScreen()
     {
+        AnimationManager.Instance.MainMenu();
+        WordGrid.Instance.Clear();
+        MainMenu.SetActive(true);
         GameOverWindow.Hide();
         InGameInterface.SetActive(false);
         MainMenu.SetActive(true);
         MenuAudio.PlayRandomBackgroundMusic();
     }
-    
+
     public void RightChoice()
     {
         _score.RightChoice();

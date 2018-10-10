@@ -9,7 +9,7 @@ public class AnimationManager : SingletonBehaviour<AnimationManager>
 
     public void InGame(Action onAnimationFinished)
     {
-        CameraAnimator.SetTrigger("ToggleView");
+        CameraAnimator.SetBool("InGame",true);
         StartCoroutine(WaitForAnimationToFinish("InGame",onAnimationFinished));
     }
 
@@ -25,6 +25,6 @@ public class AnimationManager : SingletonBehaviour<AnimationManager>
 
     public void MainMenu()
     {
-        CameraAnimator.SetTrigger("ToggleView");
+        CameraAnimator.SetBool("InGame", false);
     }
 }
