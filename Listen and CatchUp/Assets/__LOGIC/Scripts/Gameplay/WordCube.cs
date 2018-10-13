@@ -4,6 +4,7 @@ public class WordCube : Cube<Word>
 {
 
     public SpriteRenderer Image;
+    public Animator Animator;
 
     public override void Setup()
     {
@@ -22,13 +23,17 @@ public class WordCube : Cube<Word>
     {
         if (WordManager.Instance.ValidateWord(Data))
         {
-            base.OnMouseDown();
+            //GetComponent<Rigidbody2D>().gravityScale = 0;
             GameManager.Instance.RightChoice();
+            Animator.enabled = true;
+            Animator.SetBool("RightClick", true);
         }
 
         else
         {
             GameManager.Instance.WrongChoice();
+            Animator.enabled = true;
+            Animator.SetBool("WrongClick", true);
         }
 
     }
@@ -55,5 +60,15 @@ public class WordCube : Cube<Word>
             h = hue;
             material.SetColor(prop, Color.HSVToRGB(h, s, v));
         }
+    }
+
+    public void RightChoice()
+    {
+        base.OnMouseDown();
+    }
+
+    public void WrongChoice()
+    {
+        Animator.SetBool("WrongClick", false);
     }
 }

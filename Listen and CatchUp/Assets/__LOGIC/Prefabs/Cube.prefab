@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 50255628479917786}
   - component: {fileID: 61049409340492766}
   - component: {fileID: 114940438311784362}
+  - component: {fileID: 95976210398836064}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -221,6 +222,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 0.99999994}
   m_EdgeRadius: 0
+--- !u!95 &95976210398836064
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314529722103606}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c28c9b65b17bc046ad5fee004c8e153, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114940438311784362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Row: 0
   Image: {fileID: 212879796994986276}
+  Animator: {fileID: 95976210398836064}
 --- !u!212 &212229994127074670
 SpriteRenderer:
   m_ObjectHideFlags: 1
