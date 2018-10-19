@@ -3,7 +3,6 @@
 public class GameManager : SingletonBehaviour<GameManager>
 {
     public MenuCube Play;
-
     public GameObject MainMenu;
     public IngameInterface InGameInterface;
     public GameOverWindow GameOverWindow;
@@ -11,12 +10,10 @@ public class GameManager : SingletonBehaviour<GameManager>
     [Header("Audio")]
     [Header("FX")]
     public AudioClip RightAudio;
-
     public AudioClip WrongAudio;
 
     [Header("BGM")]
     public AudioClip[] MenuAudio;
-
     public AudioClip[] InGameAudio;
 
 
