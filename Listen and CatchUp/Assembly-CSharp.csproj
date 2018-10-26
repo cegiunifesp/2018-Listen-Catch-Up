@@ -62,10 +62,11 @@
   <ItemGroup>
     <Compile Include="Assets\__LOGIC\Scripts\CubeGrid\Cube.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\CubeGrid\CubeGenerator.cs" />
+    <Compile Include="Assets\__LOGIC\Scripts\Datastructure\Score.cs" />
+    <Compile Include="Assets\__LOGIC\Scripts\Datastructure\Word.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\AudioManager.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\GameManager.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\Timer.cs" />
-    <Compile Include="Assets\__LOGIC\Scripts\Gameplay\Word.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordCube.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordGrid.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Gameplay\WordManager.cs" />
@@ -81,7 +82,6 @@
     <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\__LOGIC\Scripts\Networking\GameSparksConnection.cs" />
     <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\__LOGIC\Scripts\Networking\NetworkedScore.cs" />
     <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\__LOGIC\Scripts\Utils\CoroutineExecutor.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\__LOGIC\Scripts\Utils\Score.cs" />
     <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\__LOGIC\Scripts\Utils\SingletonBehaviour.cs" />
     <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\__LOGIC\Scripts\Utils\TTS.cs" />
     <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\_EXTENSIONS\GameSparks\GameSparksRTUnity.cs" />
