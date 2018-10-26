@@ -17,11 +17,13 @@ public class IngameInterface : MonoBehaviour
 
     private void ListenButtonClicked(SpriteButton arg0)
     {
+        if (!GameManager.Instance.InGame) return;
         WordManager.Instance.ListenCurrentWord();
     }
 
     private void LeaveButtonClicked(SpriteButton arg0)
     {
+        if (!GameManager.Instance.InGame) return;
         GameManager.Instance.EndCampaign();
     }
 

@@ -3,9 +3,12 @@
 public class GameManager : SingletonBehaviour<GameManager>
 {
     public MenuCube Play;
+    public MenuCube Ranking;
+    public MenuCube Credits;
     public GameObject MainMenu;
     public IngameInterface InGameInterface;
     public GameOverWindow GameOverWindow;
+    public RankingWindow RankingWindow;
 
     [Header("Audio")]
     [Header("FX")]
@@ -15,16 +18,16 @@ public class GameManager : SingletonBehaviour<GameManager>
     [Header("BGM")]
     public AudioClip[] MenuAudio;
     public AudioClip[] InGameAudio;
-
+    public bool InGame;
 
     private Score _score;
 
     private void Start()
     {
         Play.OnClicked += cube => StartCampaign();
+        Ranking.OnClicked += cube => ShowRankingScreen();
         WordManager.Instance.OnOutOfWords += EndCampaign;
         ShowMainScreen();
-
     }
 
     public void StartCampaign()
@@ -39,6 +42,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         MainMenu.SetActive(false);
         WordGrid.Instance.GenerateGrid();
         _score = new Score();
+        InGame = true;
     }
 
     public void EndCampaign()
@@ -46,17 +50,31 @@ public class GameManager : SingletonBehaviour<GameManager>
         InGameInterface.SetActive(false);
         GameOverWindow.SetScore(_score);
         GameOverWindow.Show();
+        InGame = false;
     }
 
     public void ShowMainScreen()
     {
         AnimationManager.Instance.MainMenu();
+        RankingWindow.Hide();
         WordGrid.Instance.Clear();
         MainMenu.SetActive(true);
         GameOverWindow.Hide();
         InGameInterface.SetActive(false);
         MainMenu.SetActive(true);
         MenuAudio.PlayRandomBackgroundMusic();
+        InGame = false;
+    }
+
+    public void ShowRankingScreen()
+    {
+        NetworkedScore.Instance.GetScores(10,data =>
+        {
+            RankingWindow.Clear();
+            RankingWindow.AddEntries(data);
+        });
+        RankingWindow.Show();
+        InGame = false;
     }
 
     public void RightChoice()
@@ -72,5 +90,4 @@ public class GameManager : SingletonBehaviour<GameManager>
         _score.WrongChoice();
         WrongAudio.PlayFx();
     }
-
 }

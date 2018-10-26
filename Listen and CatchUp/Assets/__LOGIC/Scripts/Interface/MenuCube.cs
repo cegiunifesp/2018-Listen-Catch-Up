@@ -4,7 +4,7 @@ using UnityEngine;
 public class MenuCube : MonoBehaviour
 {
 
-    public Action<MenuCube> OnClicked;
+    public event Action<MenuCube> OnClicked;
     public Animator TextAnimator;
 
     private bool _hover;

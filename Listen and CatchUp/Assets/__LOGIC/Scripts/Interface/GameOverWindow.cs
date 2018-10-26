@@ -1,22 +1,35 @@
 ﻿using TMPro;
-using UnityEngine;
+using UnityEngine.UI;
 
-public class GameOverWindow : MonoBehaviour
+public class GameOverWindow : GameWindow
 {
     public TMP_Text Score;
-    public Animator WindowAnimator;
-    public SpriteButton MainMenuButton;
+    public Button MainMenuButton;
+    public TMP_InputField UsernameInput;
+    public Button SaveScoreButton;
 
-    private bool _visible = false;
-    private int _animationStateHash;
-
-    private void Awake()
+    private Score _score;
+    protected override void Awake()
     {
-        _animationStateHash = Animator.StringToHash("ShowWindow");
-        MainMenuButton.OnClicked+= OnClicked;
+        base.Awake();
+        MainMenuButton.onClick.AddListener(OnClicked);
+        UsernameInput.onValueChanged.AddListener(OnTextChanged);
+        SaveScoreButton.interactable = false;
+        SaveScoreButton.onClick.AddListener(OnSaveScoreClicked);
     }
 
-    private void OnClicked(SpriteButton arg0)
+    private void OnSaveScoreClicked()
+    {
+        NetworkedScore.Instance.PushScore(UsernameInput.text, _score.RightWords);
+        GameManager.Instance.ShowMainScreen();
+    }
+
+    private void OnTextChanged(string value)
+    {
+        SaveScoreButton.interactable = !string.IsNullOrEmpty(value);
+    }
+
+    private void OnClicked()
     {
         GameManager.Instance.ShowMainScreen();
     }
@@ -24,28 +37,6 @@ public class GameOverWindow : MonoBehaviour
     public void SetScore(Score score)
     {
         Score.text = $"{score.RightWords} words";
-    }
-
-    public void Show()
-    {
-        if (!_visible)
-        {
-            WindowAnimator.SetFloat("Visible", 1);
-            float currentTime = WindowAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-            var time = currentTime > -1 ? currentTime : 0;
-            WindowAnimator.Play(_animationStateHash, 0, time);
-            _visible = true;
-        }
-    }
-
-    public void Hide()
-    {
-        if (_visible)
-        {
-            WindowAnimator.SetFloat("Visible", -1);
-//            float currentTime = WindowAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-            WindowAnimator.Play(_animationStateHash, 0, 1);
-            _visible = false;
-        }
+        _score = score;
     }
 }
