@@ -7,8 +7,10 @@ public class GameManager : SingletonBehaviour<GameManager>
     public MenuCube Credits;
     public GameObject MainMenu;
     public IngameInterface InGameInterface;
+
     public GameOverWindow GameOverWindow;
     public RankingWindow RankingWindow;
+    public CreditsWindow CreditsWindow;
 
     [Header("Audio")]
     [Header("FX")]
@@ -25,11 +27,12 @@ public class GameManager : SingletonBehaviour<GameManager>
     private void Start()
     {
         Play.OnClicked += cube => StartCampaign();
-        Ranking.OnClicked += cube => ShowRankingScreen();
+        Ranking.OnClicked += cube => ShowRankingWindow();
+        Credits.OnClicked += cube => ShowCreditsWindow();
         WordManager.Instance.OnOutOfWords += EndCampaign;
         ShowMainScreen();
     }
-
+    
     public void StartCampaign()
     {
         AnimationManager.Instance.InGame(() =>
@@ -55,18 +58,17 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public void ShowMainScreen()
     {
-        AnimationManager.Instance.MainMenu();
         RankingWindow.Hide();
+        CreditsWindow.Hide();
+        GameOverWindow.Hide();
         WordGrid.Instance.Clear();
         MainMenu.SetActive(true);
-        GameOverWindow.Hide();
         InGameInterface.SetActive(false);
-        MainMenu.SetActive(true);
+        AnimationManager.Instance.MainMenu();
         MenuAudio.PlayRandomBackgroundMusic();
-        InGame = false;
     }
 
-    public void ShowRankingScreen()
+    public void ShowRankingWindow()
     {
         NetworkedScore.Instance.GetScores(10,data =>
         {
@@ -74,7 +76,10 @@ public class GameManager : SingletonBehaviour<GameManager>
             RankingWindow.AddEntries(data);
         });
         RankingWindow.Show();
-        InGame = false;
+    }
+    private void ShowCreditsWindow()
+    {
+        CreditsWindow.Show();
     }
 
     public void RightChoice()
