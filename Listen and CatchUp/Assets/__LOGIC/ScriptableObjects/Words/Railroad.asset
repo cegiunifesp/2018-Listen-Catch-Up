@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Ferrovia
+    Audio: {fileID: 0}
   - Language: 0
     Value: Railroad
+    Audio: {fileID: 8300000, guid: df388987cd770744594f69dcf8ca61dd, type: 3}
   Image: {fileID: 21300000, guid: 1a637d6b864eecc48af309436c516ee3, type: 3}

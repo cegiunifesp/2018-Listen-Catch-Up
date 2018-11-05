@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Estrela
+    Audio: {fileID: 0}
   - Language: 0
     Value: Star
+    Audio: {fileID: 8300000, guid: ba60cf8434579cc4fa66d2a2b86442eb, type: 3}
   Image: {fileID: 21300000, guid: 252c6cf6abd6b2744aa3839286785314, type: 3}

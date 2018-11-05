@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Bicicleta
+    Audio: {fileID: 0}
   - Language: 0
     Value: Bicycle
+    Audio: {fileID: 8300000, guid: bb3547934ff028e45a5607dc4cf69405, type: 3}
   Image: {fileID: 21300000, guid: c9a69cfbc1148994abbb84edbd243ff2, type: 3}

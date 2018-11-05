@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Casa
+    Audio: {fileID: 0}
   - Language: 0
     Value: House
+    Audio: {fileID: 8300000, guid: 24c4c9c28eb092d44a072509fc0caaab, type: 3}
   Image: {fileID: 21300000, guid: 06a1941e2acf6e548a26ecde4ecf4043, type: 3}

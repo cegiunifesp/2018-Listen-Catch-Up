@@ -23,7 +23,8 @@ public class MenuCube : MonoBehaviour
 
     protected virtual void OnMouseEnter()
     {
-        if(_hover) return;
+        if (GameManager.Instance.State != GameState.Menu) return;
+        if (_hover) return;
         TextAnimator.SetFloat("Visible", 1);
         float currentTime = TextAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
         var time = currentTime > -1 ? currentTime : 0;
@@ -42,7 +43,8 @@ public class MenuCube : MonoBehaviour
 
     protected virtual void OnMouseDown()
     {
-//        Destroy(gameObject);
+        if (GameManager.Instance.State != GameState.Menu) return;
+        //        Destroy(gameObject);
         OnClicked?.Invoke(this);
     }
 }

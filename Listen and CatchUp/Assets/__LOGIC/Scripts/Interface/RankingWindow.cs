@@ -2,24 +2,11 @@
 
 public class RankingWindow : GameWindow
 {
-    public RankingEntry RankingEntryTemplate;
-    public Transform RankingList;
+    public RankingListView RankingList;
 
-    public void AddEntries(NetworkedScoreEntry[] scores)
+    public override void Show()
     {
-        for (var i = 0; i < scores.Length; i++)
-        {
-            var score = scores[i];
-            Instantiate(RankingEntryTemplate, RankingList).Init((i + 1).ToString(), score.Name, score.Score);
-        }
-    }
-
-    public void Clear()
-    {
-        RankingEntry[] entries = RankingList.GetComponentsInChildren<RankingEntry>();
-        for (var i = 0; i < entries.Length; i++)
-        {
-            Destroy(entries[i].gameObject);
-        }
+        base.Show();
+        RankingList.Refresh();
     }
 }

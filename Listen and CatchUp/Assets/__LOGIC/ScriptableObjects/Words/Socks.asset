@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Meias
+    Audio: {fileID: 0}
   - Language: 0
     Value: Socks
+    Audio: {fileID: 8300000, guid: a1c41958ddc634d478b7772a2a2b608d, type: 3}
   Image: {fileID: 21300000, guid: 813f389fab909fc42a40b96a59951457, type: 3}

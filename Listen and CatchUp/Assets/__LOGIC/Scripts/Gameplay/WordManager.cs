@@ -79,7 +79,8 @@ public class WordManager : SingletonBehaviour<WordManager>
 
     public void ListenCurrentWord()
     {
-        GetTTS(CurrentWord, clip => clip.PlayFx());
+        CurrentWord.AudioIn(Language.English).PlayFx();
+        //        GetTTS(CurrentWord,clip => clip.PlayFx());
     }
 
     public void GetTTS(Word word, Action<AudioClip> onFinished)
@@ -105,4 +106,18 @@ public class WordManager : SingletonBehaviour<WordManager>
     {
         TTS.ClearCache();
     }
+
+    /*    [ContextMenu("CopyToFolder")]
+        private void CopyToFolder()
+        {
+
+            string targetFolder = "Assets/_DATA/Sounds/TTS/";
+
+            foreach (var word in WordList)
+            {
+                word.Values[1].Audio = AssetDatabase.LoadAssetAtPath<AudioClip>(Path.Combine(targetFolder,$"{word.In(Language.English)}.wav"));
+                EditorUtility.SetDirty(word);
+            }
+            AssetDatabase.SaveAssets();
+        }*/
 }

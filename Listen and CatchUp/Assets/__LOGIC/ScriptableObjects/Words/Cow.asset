@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Vaca
+    Audio: {fileID: 0}
   - Language: 0
     Value: Cow
+    Audio: {fileID: 8300000, guid: 833a2e5793ac310489716f2a30a97528, type: 3}
   Image: {fileID: 21300000, guid: d876f4abcfb0d1a48a57f8567db5a415, type: 3}

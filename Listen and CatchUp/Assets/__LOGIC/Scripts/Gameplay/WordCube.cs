@@ -21,7 +21,7 @@ public class WordCube : Cube<Word>
 
     protected override void OnMouseDown()
     {
-        if(!GameManager.Instance.InGame) return;
+        if (GameManager.Instance.State != GameState.Game) return;
         if (WordManager.Instance.ValidateWord(Data))
         {
             //GetComponent<Rigidbody2D>().gravityScale = 0;

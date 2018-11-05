@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Carro
+    Audio: {fileID: 0}
   - Language: 0
     Value: Car
+    Audio: {fileID: 8300000, guid: e317e040120f0d94f86dcf0f013da991, type: 3}
   Image: {fileID: 21300000, guid: 964f3567e83861d478f2beee410b6963, type: 3}

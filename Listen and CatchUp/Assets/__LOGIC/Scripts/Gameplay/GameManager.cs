@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class GameManager : SingletonBehaviour<GameManager>
 {
@@ -20,19 +22,47 @@ public class GameManager : SingletonBehaviour<GameManager>
     [Header("BGM")]
     public AudioClip[] MenuAudio;
     public AudioClip[] InGameAudio;
-    public bool InGame;
+
+    public GameState State = GameState.Menu;
 
     private Score _score;
 
     private void Start()
     {
+        LoadingScreen.Instance.Wait(this);
         Play.OnClicked += cube => StartCampaign();
         Ranking.OnClicked += cube => ShowRankingWindow();
         Credits.OnClicked += cube => ShowCreditsWindow();
         WordManager.Instance.OnOutOfWords += EndCampaign;
         ShowMainScreen();
+        StartCoroutine(WaitForClipsToLoad());
     }
-    
+
+    private IEnumerator WaitForClipsToLoad()
+    {
+        List<AudioClip> unloaded = new List<AudioClip>();
+        foreach (var clip in WordManager.Instance.WordList)
+        {
+            unloaded.Add(clip.AudioIn(Language.English));
+        }
+        foreach (var clip in MenuAudio)
+        {
+            unloaded.Add(clip);
+        }
+        foreach (var clip in InGameAudio)
+        {
+            unloaded.Add(clip);
+        }
+        unloaded.Add(RightAudio);
+        unloaded.Add(WrongAudio);
+        while (unloaded.Count != 0)
+        {
+            unloaded.RemoveAll(x => x.loadState == AudioDataLoadState.Loaded);
+            yield return null;
+        }
+        LoadingScreen.Instance.SetDone(this);
+    }
+
     public void StartCampaign()
     {
         AnimationManager.Instance.InGame(() =>
@@ -45,7 +75,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         MainMenu.SetActive(false);
         WordGrid.Instance.GenerateGrid();
         _score = new Score();
-        InGame = true;
+        State = GameState.Game;
     }
 
     public void EndCampaign()
@@ -53,7 +83,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         InGameInterface.SetActive(false);
         GameOverWindow.SetScore(_score);
         GameOverWindow.Show();
-        InGame = false;
+        State = GameState.Window;
     }
 
     public void ShowMainScreen()
@@ -66,15 +96,11 @@ public class GameManager : SingletonBehaviour<GameManager>
         InGameInterface.SetActive(false);
         AnimationManager.Instance.MainMenu();
         MenuAudio.PlayRandomBackgroundMusic();
+        State = GameState.Menu;
     }
 
     public void ShowRankingWindow()
     {
-        NetworkedScore.Instance.GetScores(10,data =>
-        {
-            RankingWindow.Clear();
-            RankingWindow.AddEntries(data);
-        });
         RankingWindow.Show();
     }
     private void ShowCreditsWindow()
@@ -95,4 +121,9 @@ public class GameManager : SingletonBehaviour<GameManager>
         _score.WrongChoice();
         WrongAudio.PlayFx();
     }
+}
+
+public enum GameState
+{
+    Window,Menu,Game
 }

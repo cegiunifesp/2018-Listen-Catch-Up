@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Gato
+    Audio: {fileID: 0}
   - Language: 0
     Value: Cat
+    Audio: {fileID: 8300000, guid: 8f6296a36cfa6e24b948b3031620a938, type: 3}
   Image: {fileID: 21300000, guid: 67409fa3933465b48bed352aa9ff78d3, type: 3}

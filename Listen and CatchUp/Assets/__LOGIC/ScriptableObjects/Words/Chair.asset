@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Cadeira
+    Audio: {fileID: 0}
   - Language: 0
     Value: Chair
+    Audio: {fileID: 8300000, guid: 2c29bcfde50e96e4f8fe1b9be02dc84d, type: 3}
   Image: {fileID: 21300000, guid: b19eddc2e2ea1474aa2dae65a24d3534, type: 3}

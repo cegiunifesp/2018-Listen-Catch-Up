@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Doce
+    Audio: {fileID: 0}
   - Language: 0
     Value: Candy
+    Audio: {fileID: 8300000, guid: 90b226e1cee76a64a8ead864ff862dd1, type: 3}
   Image: {fileID: 21300000, guid: 838908195062f3b48994ed5d11875e1c, type: 3}

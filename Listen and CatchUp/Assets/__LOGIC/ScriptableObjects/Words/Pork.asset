@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Porco
+    Audio: {fileID: 0}
   - Language: 0
     Value: Pork
+    Audio: {fileID: 8300000, guid: 01bb8c3c28408dc4ea763fa4ac09f8df, type: 3}
   Image: {fileID: 21300000, guid: 3293f2ff12ae0434e9c32f30e668c34b, type: 3}

@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Sorvete
+    Audio: {fileID: 0}
   - Language: 0
     Value: Ice Cream
+    Audio: {fileID: 8300000, guid: f933b7f8cbd95f0459c926e7d8bfef8f, type: 3}
   Image: {fileID: 21300000, guid: b117c4d3ccc750341967c7ab1963e753, type: 3}

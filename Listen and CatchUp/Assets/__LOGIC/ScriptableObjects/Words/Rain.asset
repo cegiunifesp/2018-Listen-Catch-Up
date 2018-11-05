@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Chuva
+    Audio: {fileID: 0}
   - Language: 0
     Value: Rain
+    Audio: {fileID: 8300000, guid: 282c39297f535f74ba6961e18fed2b86, type: 3}
   Image: {fileID: 21300000, guid: 26857a42f04512d4e988f895809d81ec, type: 3}

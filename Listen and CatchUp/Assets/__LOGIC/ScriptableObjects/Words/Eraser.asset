@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Borracha
+    Audio: {fileID: 0}
   - Language: 0
     Value: Eraser
+    Audio: {fileID: 8300000, guid: 3cb2d45a14099134d8cec43c2da4e550, type: 3}
   Image: {fileID: 21300000, guid: 0a7bf98e6cabe9849af42bebeb500f67, type: 3}

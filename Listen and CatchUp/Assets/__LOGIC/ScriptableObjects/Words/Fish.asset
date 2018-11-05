@@ -14,6 +14,8 @@ MonoBehaviour:
   Values:
   - Language: 1
     Value: Peixe
+    Audio: {fileID: 0}
   - Language: 0
     Value: Fish
+    Audio: {fileID: 8300000, guid: 7d98f1e9984b865408b44e0fe328d243, type: 3}
   Image: {fileID: 21300000, guid: acde2357db19a024495e4b773f919dda, type: 3}
