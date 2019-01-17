@@ -6,7 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
 
-    public int InitialSeconds = 30;
+    public int InitialSeconds = 60;
     public int RemainingSeconds ;
     public Action<Timer> OnTick;
     public Action<Timer> OnTimerFinished;
