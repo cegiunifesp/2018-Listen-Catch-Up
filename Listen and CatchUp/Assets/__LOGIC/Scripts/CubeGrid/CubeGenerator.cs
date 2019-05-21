@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -17,6 +18,10 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
     private Vector2 _cubeSize;
     private Vector3 _startLocation;
     private List<Cube<T>> _cubes = new List<Cube<T>>();
+
+
+    [Header("Cube Selector")]
+    public int selectedCube = 3;
 
     protected virtual void OnValidate()
     {
@@ -40,23 +45,30 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
 
     public virtual Cube<T> CreateCube(int row)
     {
-        Vector3 position = _startLocation + new Vector3((_cubeSize.x + Spacing) * row, 0);
-        float randomRotationx = Random.Range(RangeRotationX.x, RangeRotationX.y);
-        float randomRotationY = Random.Range(RangeRotationY.x, RangeRotationY.y);
-        Vector3 randomRotation = new Vector3(randomRotationx, randomRotationY);
-        Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
-        cube.Row = row;
-        cube.Setup();
-        cube.OnClicked += OnCubeClicked;
-        _cubes.Add(cube);
-        OnCubeSpawned?.Invoke(cube);
-        return cube;
+        //CORRIGIDO
+        if (WordManager.Instance.IsAllWordsUsed() != true)
+        {
+            Vector3 position = _startLocation + new Vector3((_cubeSize.x + Spacing) * row, 0);
+            float randomRotationx = Random.Range(RangeRotationX.x, RangeRotationX.y);
+            float randomRotationY = Random.Range(RangeRotationY.x, RangeRotationY.y);
+            Vector3 randomRotation = new Vector3(randomRotationx, randomRotationY);
+            Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
+            cube.Row = row;
+            cube.Setup();
+            cube.OnClicked += OnCubeClicked;
+            _cubes.Add(cube);
+            OnCubeSpawned?.Invoke(cube);
+            return cube;
+        }
+        else return null;
     }
 
     private void OnCubeClicked(Cube<T> cube)
     {
         CreateCube(cube.Row);
         _cubes.Remove(cube);
+        //StartCoroutine(SelectDelay());
+
     }
 
     public virtual Cube<T> CreateCube(T data, int row)
@@ -75,6 +87,8 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
                 CreateCube(i);
             }
         }
+
+        //StartCoroutine(SelectDelay());
     }
 
     public virtual void Clear()
@@ -86,4 +100,81 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
             _cubes.RemoveAt(0);
         }
     }
+
+    public void SelectCube()
+    {
+        foreach (Cube<T> c in _cubes)
+        {
+            if (c.Id == selectedCube)
+            {
+                c.SelectCube();
+            }
+            else
+            {
+                c.DeselectCube();
+            }
+        }
+    }
+
+
+    public void ClickSelectCube()
+    {
+        foreach (Cube<T> c in _cubes)
+        {
+            if (c.Id == selectedCube)
+            {
+                c.Click();
+            }
+        }
+    }
+
+
+    public IEnumerator SelectDelay()
+    {
+        yield return new WaitForSeconds(1f); // waits 3 seconds
+        SelectCube();
+    }
+
+
+
+
+    /*
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            if (selectedCube + 1 <= 19)
+            {
+                selectedCube += 1;
+                SelectCube();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (selectedCube - 1 >= 0)
+            {
+                selectedCube -= 1;
+                SelectCube();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            selectedCube -= 4;
+            SelectCube();
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            selectedCube += 4;
+            SelectCube();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ClickSelectCube();
+        }
+    }
+    */
 }

@@ -14,6 +14,7 @@ public class GameManager : SingletonBehaviour<GameManager>
     public RankingWindow RankingWindow;
     public CreditsWindow CreditsWindow;
 
+
     [Header("Audio")]
     [Header("FX")]
     public AudioClip RightAudio;

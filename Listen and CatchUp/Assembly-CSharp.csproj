@@ -78,62 +78,62 @@
     <Compile Include="Assets\__LOGIC\Scripts\Interface\LoadingScreen.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Interface\MenuCube.cs" />
     <Compile Include="Assets\__LOGIC\Scripts\Interface\RankingWindow.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Interface\RankingEntry.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Interface\RankingListView.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Interface\SpriteButton.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Networking\GameSparksConnection.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Networking\NetworkedScore.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Utils\CoroutineExecutor.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Utils\SingletonBehaviour.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Utils\TTS.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\GameSparksRTUnity.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\GameSparksSettings.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\GameSparksUnity.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\MyGameSparks.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\DefaultPlatform.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\IControlledTimer.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\IControlledWebSocket.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\detail\GameSparksNative.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\detail\GameSparksNativePINVOKE.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\detail\NativeWebSocket.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\NativePlatform.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\NativeWebSocket.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\PlatformBase.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\TimerController.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\UnityTimer.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\WebGL\SimpleJson2.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\WebGL\WebGLPlatform.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\WebGL\WebGLWebSocket.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\WebSocketController.cs" />
-    <Compile Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\TestUI\GameSparksTestUI.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Interface\RankingEntry.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Interface\RankingListView.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Interface\SpriteButton.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Networking\GameSparksConnection.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Networking\NetworkedScore.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Utils\CoroutineExecutor.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Utils\SingletonBehaviour.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\__LOGIC\Scripts\Utils\TTS.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\GameSparksRTUnity.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\GameSparksSettings.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\GameSparksUnity.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\MyGameSparks.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\DefaultPlatform.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\IControlledTimer.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\IControlledWebSocket.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\detail\GameSparksNative.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\detail\GameSparksNativePINVOKE.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\detail\NativeWebSocket.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\NativePlatform.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\Native\NativeWebSocket.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\PlatformBase.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\TimerController.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\UnityTimer.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\WebGL\SimpleJson2.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\WebGL\WebGLPlatform.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\WebGL\WebGLWebSocket.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Platforms\WebSocketController.cs" />
+    <Compile Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\TestUI\GameSparksTestUI.cs" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Sky.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Plugins\GameSparksRT.xml" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Plugins\GameSparksRT.xml" />
     <None Include="Assets\__LOGIC\Shaders\FrostedGlass.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Plugins\Metro\GameSparksRT.xml" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\Plugins\Metro\GameSparksRT.xml" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Minimalist Standard.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\Shader\Minimalist Standard lwrp.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\README.txt" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\JsonDotNet\link.xml" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\README.txt" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\JsonDotNet\link.xml" />
     <None Include="Assets\_EXTENSIONS\Minimalist Free\ReadMe.txt" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\__LOGIC\Shaders\Transparent Color Gradient.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\link.xml" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\_DEPENDENCIES\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\GameSparks\link.xml" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\_DATA\Sprites\CEGICommonAssets\CEGICommonAssets\_EXTENSIONS\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -350,26 +350,26 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle_GameSparks">
-      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DEPENDENCIES/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
-    </Reference>
-    <Reference Include="GameSparks.Api">
-      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DEPENDENCIES/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="GameSparks">
-      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DEPENDENCIES/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/GameSparks/Plugins/GameSparks.dll</HintPath>
-    </Reference>
-    <Reference Include="GameSparksRT">
-      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DEPENDENCIES/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/GameSparks/Plugins/GameSparksRT.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DEPENDENCIES/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/Renan Ruan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Renan Ruan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks.Api">
+      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DATA/Sprites/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks">
+      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DATA/Sprites/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/GameSparks/Plugins/GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle_GameSparks">
+      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DATA/Sprites/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DATA/Sprites/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparksRT">
+      <HintPath>C:/Users/Renan Ruan/Documents/GitHub/Listen-Catch-Up/Listen and CatchUp/Assets/_DATA/Sprites/CEGICommonAssets/CEGICommonAssets/_EXTENSIONS/GameSparks/Plugins/GameSparksRT.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
