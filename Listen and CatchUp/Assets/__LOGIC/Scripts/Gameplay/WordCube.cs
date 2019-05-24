@@ -9,8 +9,9 @@ public class WordCube : Cube<Word>
     public override void Setup()
     {
         Data = WordManager.Instance.GetRandomWord();
-        if (Data == null)
-            Destroy(gameObject);
+        /*if (Data == null)
+            Destroy(gameObject);*/
+
         PaintRandomColor();
     }
 
@@ -66,6 +67,7 @@ public class WordCube : Cube<Word>
     public void RightChoice()
     {
         base.OnMouseDown();
+
     }
 
     public void WrongChoice()

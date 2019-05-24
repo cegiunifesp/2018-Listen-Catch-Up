@@ -39,18 +39,23 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
     }
 
     public virtual Cube<T> CreateCube(int row)
-    {
-        Vector3 position = _startLocation + new Vector3((_cubeSize.x + Spacing) * row, 0);
-        float randomRotationx = Random.Range(RangeRotationX.x, RangeRotationX.y);
-        float randomRotationY = Random.Range(RangeRotationY.x, RangeRotationY.y);
-        Vector3 randomRotation = new Vector3(randomRotationx, randomRotationY);
-        Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
-        cube.Row = row;
-        cube.Setup();
-        cube.OnClicked += OnCubeClicked;
-        _cubes.Add(cube);
-        OnCubeSpawned?.Invoke(cube);
-        return cube;
+    { 
+        //CORRIGIDO
+        if (WordManager.Instance.IsAllWordsUsed() != true)
+        {
+            Vector3 position = _startLocation + new Vector3((_cubeSize.x + Spacing) * row, 0);
+            float randomRotationx = Random.Range(RangeRotationX.x, RangeRotationX.y);
+            float randomRotationY = Random.Range(RangeRotationY.x, RangeRotationY.y);
+            Vector3 randomRotation = new Vector3(randomRotationx, randomRotationY);
+            Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
+            cube.Row = row;
+            cube.Setup();
+            cube.OnClicked += OnCubeClicked;
+            _cubes.Add(cube);
+            OnCubeSpawned?.Invoke(cube);
+            return cube;
+        }
+        else return null;
     }
 
     private void OnCubeClicked(Cube<T> cube)

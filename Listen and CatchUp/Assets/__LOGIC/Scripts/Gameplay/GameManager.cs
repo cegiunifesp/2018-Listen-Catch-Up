@@ -55,12 +55,15 @@ public class GameManager : SingletonBehaviour<GameManager>
         }
         unloaded.Add(RightAudio);
         unloaded.Add(WrongAudio);
+        /*
         while (unloaded.Count != 0)
         {
             unloaded.RemoveAll(x => x.loadState == AudioDataLoadState.Loaded);
             yield return null;
         }
+        */
         LoadingScreen.Instance.SetDone(this);
+        yield return null;
     }
 
     public void StartCampaign()

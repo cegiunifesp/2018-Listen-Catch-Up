@@ -77,6 +77,13 @@ public class WordManager : SingletonBehaviour<WordManager>
         _unusedWordsInitialized = false;
     }
 
+    public bool IsAllWordsUsed()
+    {
+        if (UnusedWords.Count == 0)
+            return true;
+        else return false;
+    }
+
     public void ListenCurrentWord()
     {
         CurrentWord.AudioIn(Language.English).PlayFx();
