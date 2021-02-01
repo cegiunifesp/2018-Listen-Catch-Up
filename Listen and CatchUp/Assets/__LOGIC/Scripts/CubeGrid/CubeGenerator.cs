@@ -50,9 +50,9 @@ public class CubeGenerator<T> : SingletonBehaviour<CubeGenerator<T>>
         {
             Vector3 position = _startLocation + new Vector3((_cubeSize.x + Spacing) * row, 0);
             float randomRotationx = Random.Range(RangeRotationX.x, RangeRotationX.y);
-            float randomRotationY = Random.Range(RangeRotationY.x, RangeRotationY.y);
-            Vector3 randomRotation = new Vector3(randomRotationx, randomRotationY);
-            Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(randomRotation), transform).GetComponent<Cube<T>>();
+            //float randomRotationY = Random.Range(RangeRotationY.x, RangeRotationY.y);
+            //Vector3 randomRotation = new Vector3(randomRotationx, randomRotationY);
+            Cube<T> cube = Instantiate(CubePrefab, position, Quaternion.Euler(0,0, randomRotationx), transform).GetComponent<Cube<T>>();
             cube.Row = row;
             cube.Setup();
             cube.OnClicked += OnCubeClicked;
